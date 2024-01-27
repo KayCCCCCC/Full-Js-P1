@@ -52,11 +52,11 @@ function App() {
         <Navbar />
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <div className='bg-red-500 mb-4'>Hello world {name} with react+tailwindcss</div>
-          {/* <input className='text-black mb-4' type='text' value={address} onChange={(e) => handleOnchange(e)} />
-        <button className='bg-blue-500 mb-4 rounded hover:bg-green-500' onClick={(e) => handleClick(e)}>Click me!</button>
-        <Todo todos={todos} title={'All todos'} delete={deleteDataTodos} />
-        <Todo todos={todos.filter((item) => item.type === 'JavaScipt')} title={'Js todos'} delete={deleteDataTodos} /> */}
+          <div className='bg-red-500 mb-4'>Hello world {address} with react+tailwindcss</div>
+          <input className='text-black mb-4' type='text' value={address} onChange={(e) => handleOnchange(e)} />
+          <button className='bg-blue-500 mb-4 rounded hover:bg-green-500' onClick={(e) => handleClick(e)}>Click me!</button>
+          <Todo todos={todos} title={'All todos'} delete={deleteDataTodos} />
+          <Todo todos={todos.filter((item) => item.type === 'JavaScipt')} title={'Js todos'} delete={deleteDataTodos} />
           <Outlet />
         </header>
       </div>

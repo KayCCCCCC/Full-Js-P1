@@ -4,11 +4,11 @@ const http = require("http");
 
 // const configViewEngine = require('./src/config/viewEngine')
 const webRoutes = require('./src/routes/index')
-const connectDB = require('./src/databases/connectdb')
+// const connectDB = require('./src/databases/connectdb')
 const db = require('./src/models/index')
 
 
-// const sequelize = require("./src/databases/connectdb");
+const sequelize = require("./src/databases/connectdb");
 
 
 
@@ -28,16 +28,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //connect db
-connectDB();
+// connectDB();
 
-// sequelize
-//     .authenticate()
-//     .then(() => {
-//         console.log("DB connected");
-//     })
-//     .catch((err) => {
-//         console.log("Error" + err);
-//     });
+sequelize
+    .authenticate()
+    .then(() => {
+        console.log("DB connected");
+    })
+    .catch((err) => {
+        console.log("Error" + err);
+    });
 
 server.listen(port, hostname, () => {
     console.log(`Example app listening on http://${hostname}:${port}`);
